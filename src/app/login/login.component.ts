@@ -45,10 +45,30 @@ userDetails:any={
     console.log(this.pswd);//1000
     
   }
-  // login(){
+  login(){
+    // alert('Login clicked');
+    var acno=this.acno;
+    var pswd=this.pswd;
+    var userDetails=this.userDetails;
+
+    if(acno in userDetails){
+      if(pswd==userDetails[acno]['password']){
+        alert('Login successful');
+      }
+      else{
+        alert('Invalid password');
+      }
+
+    }
+    else{
+      alert('Invalid user details');
+    }
+
+  // }
+  // login(a:any,p:any){
   //   // alert('Login clicked');
-  //   var acno=this.acno;
-  //   var pswd=this.pswd;
+  //   var acno=a.value;
+  //   var pswd=p.value;
   //   var userDetails=this.userDetails;
 
   //   if(acno in userDetails){
@@ -65,25 +85,5 @@ userDetails:any={
   //   }
 
   // }
-  login(a:any,p:any){
-    // alert('Login clicked');
-    var acno=a.value;
-    var pswd=p.value;
-    var userDetails=this.userDetails;
-
-    if(acno in userDetails){
-      if(pswd==userDetails[acno]['password']){
-        alert('Login successful');
-      }
-      else{
-        alert('Invalid password');
-      }
-
-    }
-    else{
-      alert('Invalid user details');
-    }
-
   }
-
-}
+  }
